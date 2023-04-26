@@ -1,4 +1,4 @@
-youtube-dl -f 'best[height<=480]' --external-downloader=aria2c --external-downloader-args '--min-split-size=1M --max-connection-per-server=16 --max-concurrent-downloads=16 --split=16' -ia list --exec "ffpb -i {} -c:v libx265 -crf 26 -preset fast -c:a aac -b:a 128k {}_h265.mp4"
+yt-dlp -f 'best[height<=480]' --external-downloader=aria2c --external-downloader-args '--min-split-size=1M --max-connection-per-server=16 --max-concurrent-downloads=16 --split=16' -ia list --exec "ffpb -i {} -c:v libx265 -crf 26 -preset fast -c:a aac -b:a 128k {}_h265.mp4"
 #detox -v ./*
 #export todelete
 #while read file; do todelete+=($file); done <<< $(ls -1 -I list -I "*_h265*")
